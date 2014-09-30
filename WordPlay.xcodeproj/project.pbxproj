@@ -14,6 +14,7 @@
 		D093E5D619DB24BB008BBFCE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D093E5D419DB24BB008BBFCE /* LaunchScreen.xib */; };
 		D093E5E219DB24BC008BBFCE /* WordPlayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093E5E119DB24BC008BBFCE /* WordPlayTests.swift */; };
 		D093E5EC19DB24D4008BBFCE /* CheckMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D093E5EB19DB24D4008BBFCE /* CheckMate.framework */; };
+		D093E5F119DB274D008BBFCE /* EnterNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093E5F019DB274D008BBFCE /* EnterNameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 		D093E5E119DB24BC008BBFCE /* WordPlayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordPlayTests.swift; sourceTree = "<group>"; };
 		D093E5EB19DB24D4008BBFCE /* CheckMate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CheckMate.framework; sourceTree = "<group>"; };
 		D093E5ED19DB24F0008BBFCE /* WordPlay-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WordPlay-Bridging-Header.h"; sourceTree = "<group>"; };
+		D093E5F019DB274D008BBFCE /* EnterNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterNameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				D093E5CB19DB24BB008BBFCE /* AppDelegate.swift */,
 				D093E5CD19DB24BB008BBFCE /* ViewController.swift */,
 				D093E5CF19DB24BB008BBFCE /* Main.storyboard */,
+				D093E5F019DB274D008BBFCE /* EnterNameViewController.swift */,
 				D093E5D219DB24BB008BBFCE /* Images.xcassets */,
 				D093E5D419DB24BB008BBFCE /* LaunchScreen.xib */,
 				D093E5C919DB24BB008BBFCE /* Supporting Files */,
@@ -218,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D093E5F119DB274D008BBFCE /* EnterNameViewController.swift in Sources */,
 				D093E5CE19DB24BB008BBFCE /* ViewController.swift in Sources */,
 				D093E5CC19DB24BB008BBFCE /* AppDelegate.swift in Sources */,
 			);
