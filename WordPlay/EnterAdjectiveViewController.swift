@@ -10,9 +10,14 @@ import UIKit
 
 class EnterAdjectiveViewController: UIViewController {
 
+    //Vars
+    var name:String!
+
     //IBOutlets
     @IBOutlet weak var adjectiveTextField: UITextField!
-    
+
+    //Vars
+    //var adjective:String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,16 +29,15 @@ class EnterAdjectiveViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        var vc = segue.destinationViewController as ResultsViewController
+
+        vc.toPass = adjectiveTextField.text
+        vc.name = name
+
     }
-    */
+
 
 }

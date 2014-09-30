@@ -24,6 +24,13 @@ class EnterNameViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+
+        var enterNameVC = segue.destinationViewController as EnterAdjectiveViewController
+
+        enterNameVC.name = nameTextField.text
+    }
     
 
     /*

@@ -102,7 +102,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="c4Z-fl-c2H" kind="push" id="Xan-1b-bP9"/>
+                                    <segue destination="c4Z-fl-c2H" kind="push" identifier="SegueTest" id="Xan-1b-bP9"/>
                                 </connections>
                             </button>
                         </subviews>

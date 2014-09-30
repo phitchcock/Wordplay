@@ -13,11 +13,13 @@ class ResultsViewController: UIViewController {
     //IBOutlets
     @IBOutlet weak var resultsTextView: UITextView!
     
+    var toPass:String!
+    var name:String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        resultsTextView.text = "\(toPass) and \(name)"
     }
 
     override func didReceiveMemoryWarning() {
