@@ -8,11 +8,10 @@
 
 import UIKit
 
-class EnterNameViewController: UIViewController {
+class EnterNameViewController: UIViewController, UITextFieldDelegate {
 
     //IBOutlets
     @IBOutlet weak var nameTextField: UITextField!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,20 +26,26 @@ class EnterNameViewController: UIViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 
-        var enterNameVC = segue.destinationViewController as EnterAdjectiveViewController
+        var enterAdjectiveVC = segue.destinationViewController as EnterAdjectiveViewController
 
-        enterNameVC.name = nameTextField.text
+        if nameTextField.text == "" {
+
+            var alert = UIAlertController(title: "Enter Name", message: "Please enter a name to play!", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+
+
+        } else {
+
+            enterAdjectiveVC.name = nameTextField.text
+            nameTextField.text = ""
+        }
+    }
+
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+
+        self.view.endEditing(true)
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

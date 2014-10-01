@@ -10,16 +10,19 @@ import UIKit
 
 class ResultsViewController: UIViewController {
 
+    //Vars
+    var name:String!
+    var adjective:String!
+    var secondWord:String!
+    var thirdWord:String!
+
     //IBOutlets
     @IBOutlet weak var resultsTextView: UITextView!
-    
-    var toPass:String!
-    var name:String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        resultsTextView.text = "\(toPass) and \(name)"
+        self.resultsTextView.text = "\(name) and \(adjective) and \(secondWord) and \(thirdWord)"
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,15 +30,4 @@ class ResultsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

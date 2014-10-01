@@ -8,36 +8,50 @@
 
 import UIKit
 
-class EnterAdjectiveViewController: UIViewController {
+class EnterAdjectiveViewController: UIViewController, UITextFieldDelegate {
 
     //Vars
     var name:String!
 
     //IBOutlets
     @IBOutlet weak var adjectiveTextField: UITextField!
-
-    //Vars
-    //var adjective:String!
+    @IBOutlet weak var adjectiveLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+       adjectiveLabel.text = "Hello \(name.capitalizedString) enter your adjective"
+    
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 
-        var vc = segue.destinationViewController as ResultsViewController
+        var secondWordVC = segue.destinationViewController as SecondWordViewController
 
-        vc.toPass = adjectiveTextField.text
-        vc.name = name
+        if adjectiveTextField.text == "" {
 
+            var alert = UIAlertController(title: "Enter Word", message: "Please enter an adjective to continue!", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+
+        } else {
+
+            secondWordVC.adjective = adjectiveTextField.text
+            secondWordVC.name = name
+
+            adjectiveTextField.text = ""
+
+        }
     }
 
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
 
+        self.view.endEditing(true)
+    }
+    
 }
