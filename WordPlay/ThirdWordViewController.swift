@@ -35,12 +35,21 @@ class ThirdWordViewController: UIViewController, UITextFieldDelegate {
 
         var resultsVC = segue.destinationViewController as ResultsViewController
 
-        resultsVC.thirdWord = thirdWordTextField.text
-        resultsVC.name = name
-        resultsVC.adjective = adjective
-        resultsVC.secondWord = secondWord
+        if thirdWordTextField.text == "" {
 
-        thirdWordTextField.text = ""
+            var alert = UIAlertController(title: "Enter Word", message: "Please enter a word to continue!", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        } else {
+
+            resultsVC.thirdWord = thirdWordTextField.text
+            resultsVC.name = name
+            resultsVC.adjective = adjective
+            resultsVC.secondWord = secondWord
+
+            thirdWordTextField.text = ""
+
+        }
     }
 
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {

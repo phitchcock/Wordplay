@@ -35,11 +35,21 @@ class SecondWordViewController: UIViewController, UITextFieldDelegate {
 
         var thridWordVC = segue.destinationViewController as ThirdWordViewController
 
-        thridWordVC.secondWord = secondWordTextField.text
-        thridWordVC.name = name
-        thridWordVC.adjective = adjective
+        if secondWordTextField.text == "" {
 
-        secondWordTextField.text = ""
+            var alert = UIAlertController(title: "Enter Second Word", message: "Please enter a word to continue!", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+        } else {
+
+            thridWordVC.secondWord = secondWordTextField.text
+            thridWordVC.name = name
+            thridWordVC.adjective = adjective
+
+            secondWordTextField.text = ""
+
+        }
     }
 
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
