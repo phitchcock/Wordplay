@@ -23,6 +23,7 @@ class ResultsViewController: UIViewController {
         super.viewDidLoad()
 
         self.resultsTextView.text = "\(name) and \(adjective) and \(secondWord) and \(thirdWord)"
+        //self.resultsTextView.attributedText
     }
 
     override func didReceiveMemoryWarning() {
