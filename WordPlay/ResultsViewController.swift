@@ -20,8 +20,6 @@ class ResultsViewController: UIViewController {
     //IBOutlets
     @IBOutlet weak var resultsTextView: UITextView!
 
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -34,7 +34,6 @@ class EnterNameViewController: UIViewController, UITextFieldDelegate {
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
 
-
         } else {
 
             enterAdjectiveVC.name = nameTextField.text
