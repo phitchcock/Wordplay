@@ -10,41 +10,37 @@ import UIKit
 
 class EnterNameViewController: UIViewController, UITextFieldDelegate {
 
-    //IBOutlets
+    //MARK: - IBOutlets
     @IBOutlet weak var nameTextField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
+    //MARK: - prepareForSegue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-
         var enterAdjectiveVC = segue.destinationViewController as EnterAdjectiveViewController
-
-        if nameTextField.text == "" {
-
-            var alert = UIAlertController(title: "Enter Name", message: "Please enter a name to play!", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
+        if nameTextField.text != "" {
+            enterAdjectiveVC.name = nameTextField.text
 
         } else {
-
-            enterAdjectiveVC.name = nameTextField.text
-            nameTextField.text = ""
+            var alert = UIAlertController(title: "Enter Name", message: "Please enter a name to play!", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            presentViewController(alert, animated: true, completion: nil)
         }
     }
 
+    //MARK: - TextField Functions
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-
-        self.view.endEditing(true)
-        
+        view.endEditing(true)
     }
-    
+
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        nameTextField.resignFirstResponder()
+        return true
+    }
 }
